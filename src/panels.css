@@ -5,7 +5,7 @@
 }
 
 html {
-  -webkit-tap-highlight-color: transparent; // Needed for mobile safari
+  -webkit-tap-highlight-color: transparent;
 }
 
 :is(button, a, .button).yuzui {

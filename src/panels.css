@@ -2,6 +2,7 @@
   --shadow: var(--shadow-size, 4px);
   background: var(--background-color, white);
   color: var(--text-color, currentColor);
+  -webkit-text-size-adjust: 100%;
 }
 
 :is(button, a, .button).yuzui {
@@ -9,6 +10,7 @@
   -moz-appearance: none;
   appearance: none;
   -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
 
   position: relative;
   display: flex;

@@ -33,11 +33,11 @@
   }
 
   &:not(.flush):is(:active, .pressed, .loading) {
-    transform: translate(0px, 0px);
+    transform: translate(0);
   }
 
   &.flush {
-    transform: translate(0, 0);
+    transform: translate(0);
   }
 
   &.flush:is(:active, .pressed, .loading) {
@@ -82,7 +82,7 @@
 }
 
 .all-flush .yuzui {
-  transform: translate(0, 0) !important;
+  transform: translate(0) !important;
 }
 
 .all-flush :is(button, a, .button).yuzui:is(:active, .pressed, .loading) {

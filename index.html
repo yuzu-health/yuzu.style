@@ -109,11 +109,17 @@
   </div>
 
   <div style="display: grid; margin-top: 10px">
-    <code>&lt;button class="yuzui"&gt;Click me!&lt;/button&gt;</code>
-    <code>&lt;a class="yuzui"&gt;A link&lt;/a&gt;</code>
-    <code>&lt;button class="yuzui pressed"&gt;Pressed&lt;/button&gt;</code>
-    <code>&lt;button class="yuzui loading"&gt;When Loading&lt;/button&gt;</code>
-    <code>&lt;button class="yuzui flush"&gt;You can offset&lt;/button&gt;</code>
+    <code>&lt;button class="<b>yuzui</b>"&gt;Click me!&lt;/button&gt;</code>
+    <code>&lt;a class="<b>yuzui</b>"&gt;A link&lt;/a&gt;</code>
+    <code>
+      &lt;button class="<b>yuzui pressed</b>"&gt;Pressed&lt;/button&gt;
+    </code>
+    <code>
+      &lt;button class="<b>yuzui loading</b>"&gt;When Loading&lt;/button&gt;
+    </code>
+    <code>
+      &lt;button class="<b>yuzui flush</b>"&gt;You can offset&lt;/button&gt;
+    </code>
   </div>
 
   <br />
@@ -151,8 +157,8 @@
 
   <div style="display: grid; margin-top: 10px">
     <code>
-      &lt;div class="right" data-tooltip="Example tooltip"&gt;Hover on
-      me!&lt;/div&gt;
+      &lt;div class="<b>right</b>"
+      <b>data-tooltip="Example tooltip"</b>&gt;Hover on me!&lt;/div&gt;
     </code>
     <code>
       &lt;div class="top" data-tooltip="Example tooltip"&gt;Top&lt;/div&gt;
@@ -169,6 +175,12 @@
   <br />
 
   <h3>Inputs</h3>
+
+  <i>
+    Inputs and Textareas need to be in a div due to styling bugs on Safari iOS
+  </i>
+
+  <br /><br />
 
   <div class="yuzui">
     <input style="font-size: 16px" placeholder="an example input" />
@@ -197,11 +209,16 @@
 
   <h3>Panels</h3>
 
-  <div class="yuzui" style="padding: 10px; width: 50%">This is a panel</div>
+  <div class="yuzui" style="padding: 10px; width: 50%">
+    This is a normal panel
+  </div>
 
   <br />
 
-  <code>&lt;div class="yuzui"&gt; This is a panel &lt;/div&gt;</code>
+  <code>
+    &lt;div class="yuzui" style="padding: 10px"&gt; This is a normal panel
+    &lt;/div&gt;
+  </code>
 
   <br /><br /><br />
 

@@ -12,10 +12,11 @@ const configs = bundleNames.map((name) => {
     plugins: [
       postcss({
         path: "src",
-        modules: true,
+        modules: false,
         inject: false,
         minimize: true,
         extract: true,
+        sourceMap: true,
       }),
     ],
   };

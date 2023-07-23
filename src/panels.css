@@ -62,6 +62,10 @@
   border: 1px solid currentColor;
   box-shadow: currentColor var(--shadow) var(--shadow);
 
+  &:not(.flush) {
+    transform: translate(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)));
+  }
+
   &:has(:is(input, textarea):only-child) {
     display: inline-block;
   }
@@ -75,6 +79,14 @@
   width: 100%;
   padding: 6px;
   display: inline-block;
+}
+
+.all-flush .yuzui {
+  transform: translate(0, 0) !important;
+}
+
+.all-flush :is(button, a, .button).yuzui:is(:active, .pressed, .loading) {
+  transform: translate(var(--shadow), var(--shadow)) !important;
 }
 
 .yuzui-row {
@@ -91,14 +103,6 @@
 
 .yuzui-row + .yuzui-row {
   margin-top: -1px;
-}
-
-:is(.yuzui-row, .yuzui-column) > :is(button, a, .button).yuzui {
-  transform: translate(0, 0);
-
-  &:is(:active, .pressed, .loading) {
-    transform: translate(var(--shadow), var(--shadow));
-  }
 }
 
 div:has:only(> .yuzui) {

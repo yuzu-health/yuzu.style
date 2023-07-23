@@ -2,8 +2,202 @@
 
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 
-<link rel="stylesheet" href="src/reset.css" />
-<link rel="stylesheet" href="src/blocks.css" />
-<link rel="stylesheet" href="src/simple.css" />
+<link rel="stylesheet" type="text/css" href="./src/panels.css" />
+<link rel="stylesheet" type="text/css" href="./src/tooltip.css" />
+<link rel="stylesheet" type="text/css" href="./src/backgrounds.css" />
+<link rel="stylesheet" type="text/css" href="./src/themes.css" />
 
-<main></main>
+<style>
+  body {
+    font-family: sans-serif;
+    margin: 0;
+
+    --primary: 0 0% 0%;
+    --light: 0 0% 93%;
+
+    --text-color: hsl(var(--primary));
+    --background-color: hsl(var(--light));
+
+    color: var(--text-color);
+    background: var(--background-color);
+  }
+</style>
+
+<script>
+  let theme = 0;
+
+  const themes = [
+    { background: "#ededed", text: "#000000" },
+    { background: "hsl(0 0% 93%)", text: "#ededed" },
+  ];
+
+  function changeTheme() {
+    const body = document.querySelector("body");
+    theme = (theme + 1) % 4;
+    body.className = `yuzui-theme-${theme}`;
+  }
+</script>
+
+<div
+  class="yuzui-bg-dashes"
+  style="
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    color: hsl(var(--primary) / 0.1);
+    --dashes-gap: 6px;
+    z-index: -1;
+  "
+></div>
+
+<main style="padding: 20px; max-width: 1024px; margin: 0 auto">
+  <h1>Yuzu Health Styles</h1>
+
+  <div style="margin-bottom: 10px">
+    Retro style components built purely with css.
+  </div>
+
+  <div>
+    Inspired by
+    <a href="https://thesephist.github.io/blocks.css/" target="_blank">
+      blocks.css
+    </a>
+  </div>
+
+  <br />
+
+  <h3>Buttons</h3>
+  <div style="display: flex; flex-wrap: wrap; gap: 10px">
+    <button class="yuzui" onclick="changeTheme()">Change Theme</button>
+    <a class="yuzui">A link</a>
+    <button class="yuzui loading">When Loading</button>
+    <button class="yuzui flush">You can offset</button>
+  </div>
+
+  <br />
+
+  <h3>Tooltips</h3>
+  <div style="display: flex; gap: 10px">
+    <div
+      class="yuzui right"
+      style="padding: 4px"
+      data-tooltip="Example tooltip"
+    >
+      Hover on me!
+    </div>
+
+    <div
+      class="yuzui top"
+      style="width: 50px; padding: 4px"
+      data-tooltip="Example tooltip"
+    >
+      Top
+    </div>
+
+    <div
+      class="yuzui bottom"
+      style="width: 50px; padding: 4px"
+      data-tooltip="Example tooltip"
+    >
+      Button
+    </div>
+
+    <div
+      class="yuzui left"
+      style="width: 50px; padding: 4px"
+      data-tooltip="Example tooltip"
+    >
+      Left
+    </div>
+  </div>
+
+  <br />
+
+  <h3>Inputs</h3>
+
+  <div class="yuzui">
+    <input style="font-size: 16px" placeholder="an example input" />
+  </div>
+
+  <br />
+
+  <br />
+
+  <div class="yuzui">
+    <textarea placeholder="an example textarea"></textarea>
+  </div>
+
+  <br />
+
+  <br />
+
+  <h3>Panels</h3>
+
+  <div class="yuzui" style="padding: 10px; width: 50%">This is a panel</div>
+
+  <br />
+
+  <div style="width: 400px">
+    <div class="yuzui-row">
+      <div class="yuzui" style="width: 100%; padding: 4px">Sign In</div>
+    </div>
+
+    <form class="yuzui-row" style="display: inline-flex">
+      <div class="yuzui">
+        <input style="font-size: 16px" placeholder="Username" />
+      </div>
+      <div class="yuzui">
+        <input style="font-size: 16px" placeholder="Password" type="password" />
+      </div>
+      <button class="yuzui">Submit</button>
+    </form>
+  </div>
+
+  <br />
+
+  <form class="yuzui-column" style="display: grid; width: 200px">
+    <div class="yuzui-row">
+      <div class="yuzui" style="padding: 6px; flex-grow: 1">Sign In</div>
+      <button class="yuzui" style="padding: 6px 12px">x</button>
+    </div>
+    <div class="yuzui">
+      <input style="font-size: 16px" placeholder="Username" />
+    </div>
+    <div class="yuzui">
+      <input style="font-size: 16px" placeholder="Password" type="password" />
+    </div>
+    <button class="yuzui" style="width: 100%">Submit</button>
+  </form>
+
+  <br />
+
+  <h3>Backgrounds</h3>
+
+  <div style="display: flex; gap: 20px">
+    <div class="yuzui-bg-dots" style="width: 100px; height: 100px"></div>
+
+    <div class="yuzui-bg-dashes" style="width: 100px; height: 100px"></div>
+
+    <div
+      class="yuzui-bg-dots"
+      style="width: 100px; height: 100px; --dot-size: 10px"
+    ></div>
+
+    <div
+      class="yuzui-bg-dashes"
+      style="
+        width: 100px;
+        height: 100px;
+        color: rgba(0, 0, 0, 0.5);
+        --dashes-gap: 10px;
+      "
+    ></div>
+  </div>
+
+  <br />
+
+  <br />
+</main>

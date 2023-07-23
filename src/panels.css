@@ -1,0 +1,124 @@
+.yuzui {
+  --shadow: var(--shadow-size, 4px);
+  background: var(--background-color, white);
+  color: var(--text-color, currentColor);
+}
+
+:is(button, a, .button).yuzui {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 32px;
+  font-weight: 500;
+  border: 1px solid currentColor;
+  text-decoration: none;
+  transition-property: none;
+  transition-duration: 75ms;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: currentColor var(--shadow) var(--shadow);
+
+  &:is(:active, .selected, .loading) {
+    transition-property: transform, box-shadow;
+    box-shadow: currentColor 0px 0px;
+  }
+
+  &:is(.loading, .selected) {
+    pointer-events: none;
+  }
+
+  &:not(.flush) {
+    transform: translate(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)));
+  }
+
+  &:not(.flush):is(:active, .selected, .loading) {
+    transform: translate(0px, 0px);
+  }
+
+  &.flush {
+    transform: translate(0, 0);
+  }
+
+  &.flush:is(:active, .selected, .loading) {
+    transform: translate(var(--shadow), var(--shadow));
+  }
+
+  &.loading::after {
+    position: absolute;
+    right: 6px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    border-radius: 100%;
+    border: 2px solid currentColor;
+    border-top-color: transparent;
+    height: 12px;
+    width: 12px;
+    content: "";
+  }
+}
+
+:is(div, span):not(.button).yuzui {
+  border: 1px solid currentColor;
+  box-shadow: currentColor var(--shadow) var(--shadow);
+
+  &:has(:is(input, textarea):only-child) {
+    display: inline-block;
+  }
+}
+
+:is(div, span):not(.button).yuzui > :is(input, textarea):only-child {
+  color: currentColor;
+  background: none !important;
+  border: none !important;
+  outline: none !important;
+  width: 100%;
+  padding: 6px;
+  display: inline-block;
+}
+
+.yuzui-row {
+  display: flex;
+}
+
+.yuzui-row > *:not(:last-child) {
+  margin-right: -1px;
+}
+
+.yuzui-row > :is(button, a, .button).yuzui ~ * {
+  z-index: 1;
+}
+
+.yuzui-row + .yuzui-row {
+  margin-top: -1px;
+}
+
+:is(.yuzui-row, .yuzui-column) > :is(button, a, .button).yuzui {
+  transform: translate(0, 0);
+
+  &:is(:active, .selected, .loading) {
+    transform: translate(var(--shadow), var(--shadow));
+  }
+}
+
+div:has:only(> .yuzui) {
+  margin-right: -1px;
+}
+
+.yuzui-column > * {
+  margin-bottom: -1px;
+}
+
+.yuzui-column:has(:is(button, a, .button).yuzui) ~ * {
+  z-index: 1;
+}
+
+.yuzui-row:has(:is(button, a, .button).yuzui) ~ * {
+  z-index: 1;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,142 @@
+[data-tooltip] {
+  --text: var(--text-color, black);
+  --background: var(--background-color, white);
+}
+
+[data-tooltip]:hover {
+  will-change: transform, opacity;
+  position: relative;
+}
+
+[data-tooltip]:hover::before {
+  text-decoration: none;
+  background: var(--text);
+  color: var(--background);
+  font-size: 12px;
+  pointer-events: none;
+  position: absolute;
+  text-align: center;
+  content: attr(data-tooltip);
+  z-index: 10;
+  min-width: 0;
+  max-width: 150px;
+  white-space: pre-line;
+  width: max-content;
+  padding: 8px 6px;
+}
+
+[data-tooltip]:hover::after {
+  pointer-events: none;
+  position: absolute;
+  z-index: 99999;
+  font-size: 10px;
+  color: var(--text);
+}
+
+[data-tooltip]:hover::before,
+.top[data-tooltip]:hover::before {
+  top: -12px;
+  left: 50%;
+  bottom: auto;
+  animation: tooltip-fade-in 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+[data-tooltip]:hover::after,
+.top[data-tooltip]:hover::after {
+  top: -2px;
+  left: 50%;
+  bottom: auto;
+  content: "\25BC";
+  animation: tooltip-fade-in 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.bottom[data-tooltip]:hover::before {
+  bottom: -12px;
+  left: 50%;
+  top: auto;
+  animation: tooltip-fade-in-down 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.bottom[data-tooltip]:hover::after {
+  bottom: -2px;
+  left: 50%;
+  top: auto;
+  content: "\25B2";
+  animation: tooltip-fade-in-down 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.left[data-tooltip]:hover::before {
+  left: -12px;
+  top: 50%;
+  animation: tooltip-fade-in-left 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.left[data-tooltip]:hover::after {
+  left: -4px;
+  top: 50%;
+  content: "\25B6";
+  animation: tooltip-fade-in-left 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.right[data-tooltip]:hover::before {
+  right: -12px;
+  left: auto;
+  top: 50%;
+  animation: tooltip-fade-in-right 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.right[data-tooltip]:hover::after {
+  right: -4px;
+  left: auto;
+  top: 50%;
+  content: "\25C0";
+  animation: tooltip-fade-in-right 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes tooltip-fade-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, calc(-100% + 10px));
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -100%);
+  }
+}
+
+@keyframes tooltip-fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, calc(100% - 10px));
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 100%);
+  }
+}
+
+@keyframes tooltip-fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translate(calc(-100% + 10px), -50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-100%, -50%);
+  }
+}
+
+@keyframes tooltip-fade-in-right {
+  0% {
+    opacity: 0;
+    transform: translate(calc(100% - 10px), -50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(100%, -50%);
+  }
+}

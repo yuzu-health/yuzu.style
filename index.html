@@ -255,19 +255,35 @@
 &lt;/form&gt;
   </pre>
 
-  <form class="yuzui-column" style="width: 200px">
-    <div class="yuzui-row">
-      <div class="yuzui" style="padding: 6px; flex-grow: 1">Sign In</div>
-      <button class="yuzui" style="padding: 6px 12px">x</button>
-    </div>
-    <div class="yuzui">
-      <input style="font-size: 16px" placeholder="Username" />
-    </div>
-    <div class="yuzui">
-      <input style="font-size: 16px" placeholder="Password" type="password" />
-    </div>
-    <button class="yuzui" style="width: 100%">Submit</button>
-  </form>
+  <div style="display: flex; gap: 10px">
+    <form class="yuzui-column" style="width: 200px">
+      <div class="yuzui-row">
+        <div class="yuzui" style="padding: 6px; flex-grow: 1">Sign In</div>
+        <button class="yuzui" style="padding: 6px 12px">x</button>
+      </div>
+      <div class="yuzui">
+        <input style="font-size: 16px" placeholder="Username" />
+      </div>
+      <div class="yuzui">
+        <input style="font-size: 16px" placeholder="Password" type="password" />
+      </div>
+      <button class="yuzui" style="width: 100%">Submit</button>
+    </form>
+
+    <form class="yuzui-column all-flush" style="width: 200px">
+      <div class="yuzui-row">
+        <div class="yuzui" style="padding: 6px; flex-grow: 1">Sign In</div>
+        <button class="yuzui" style="padding: 6px 12px">x</button>
+      </div>
+      <div class="yuzui">
+        <input style="font-size: 16px" placeholder="Username" />
+      </div>
+      <div class="yuzui">
+        <input style="font-size: 16px" placeholder="Password" type="password" />
+      </div>
+      <button class="yuzui" style="width: 100%">Submit</button>
+    </form>
+  </div>
 
   <pre>
 &lt;form class="<b>yuzui-column</b>"&gt;
@@ -285,6 +301,17 @@
 &lt;/form&gt;
 </pre
   >
+
+  <pre>
+&lt;form class="yuzui-column <b>all-flush</b>"&gt;
+... same as above ...
+</pre
+  >
+  <i>
+    <b>.flush</b> makes the contents go where they'd normally be without the
+    shadow. <b>.all-flush</b> in the parent makes all children flush. Normally,
+    the "raised" nature of the panel, unflushed, offsets the contents a bit.
+  </i>
 
   <br />
 

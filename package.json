@@ -1,6 +1,6 @@
 {
   "name": "@yuzu-health/yuzui",
-  "version": "0.0.5",
+  "version": "0.0.7",
   "main": "/src/all.css",
   "repository": {
     "type": "git",
@@ -10,8 +10,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rollup --config rollup.config.js",
-    "prepublishOnly": "npm run build",
-    "publish": "npm publish --access public"
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "src",

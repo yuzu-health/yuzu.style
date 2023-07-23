@@ -1,13 +1,16 @@
 {
-  "name": "yuzu.style",
+  "name": "@yuzu-health/yuzui",
   "version": "0.0.1",
-  "main": "/src/panels.css",
-  "repository": "git@github.com:yuzu-health/style.git",
+  "main": "/src/all.css",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/yuzu-health/yuzUI.git"
+  },
   "author": "Ryan Lee <ryan@yuzu.health>",
   "license": "MIT",
   "scripts": {
     "build": "rollup --config rollup.config.js",
-    "prepublishOnly": "npm build"
+    "prepublishOnly": "npm run build"
   },
   "files": [
     "src",

@@ -19,12 +19,12 @@
   font-size: 16px;
   box-shadow: currentColor var(--shadow) var(--shadow);
 
-  &:is(:active, .selected, .loading) {
+  &:is(:active, .pressed, .loading) {
     transition-property: transform, box-shadow;
     box-shadow: currentColor 0px 0px;
   }
 
-  &:is(.loading, .selected) {
+  &:is(.loading, .pressed) {
     pointer-events: none;
   }
 
@@ -32,7 +32,7 @@
     transform: translate(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)));
   }
 
-  &:not(.flush):is(:active, .selected, .loading) {
+  &:not(.flush):is(:active, .pressed, .loading) {
     transform: translate(0px, 0px);
   }
 
@@ -40,7 +40,7 @@
     transform: translate(0, 0);
   }
 
-  &.flush:is(:active, .selected, .loading) {
+  &.flush:is(:active, .pressed, .loading) {
     transform: translate(var(--shadow), var(--shadow));
   }
 
@@ -96,13 +96,17 @@
 :is(.yuzui-row, .yuzui-column) > :is(button, a, .button).yuzui {
   transform: translate(0, 0);
 
-  &:is(:active, .selected, .loading) {
+  &:is(:active, .pressed, .loading) {
     transform: translate(var(--shadow), var(--shadow));
   }
 }
 
 div:has:only(> .yuzui) {
   margin-right: -1px;
+}
+
+.yuzui-column {
+  display: grid;
 }
 
 .yuzui-column > * {

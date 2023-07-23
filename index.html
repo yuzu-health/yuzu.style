@@ -1,7 +1,6 @@
-<title>yuzu.style</title>
+<title>yuzUI</title>
 
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-
 <link rel="stylesheet" type="text/css" href="./src/all.css" />
 
 <style>
@@ -24,11 +23,6 @@
 <script>
   let theme = 0;
 
-  const themes = [
-    { background: "#ededed", text: "#000000" },
-    { background: "hsl(0 0% 93%)", text: "#ededed" },
-  ];
-
   function changeTheme() {
     const body = document.querySelector("body");
     theme = (theme + 1) % 4;
@@ -45,7 +39,7 @@
     pointer-events: none;
     top: 0;
     left: 0;
-    color: hsl(var(--primary) / 0.1);
+    color: hsl(var(--primary) / 0.05);
     --dashes-gap: 6px;
     z-index: -1;
   "
@@ -60,15 +54,17 @@
       href="https://yuzu.health"
       style="color: hsl(var(--accent))"
       target="_blank"
-      >yuzu.health</a
     >
+      yuzu.health
+    </a>
     and
     <a
       href="https://yuzu.party"
       style="color: hsl(var(--accent))"
       target="_blank"
-      >yuzu.party</a
     >
+      yuzu.party
+    </a>
   </div>
 
   <div>
@@ -80,35 +76,47 @@
 
   <br />
 
-  <code class="yuzui" style="padding: 10px; display: block">
+  <div style="margin-bottom: 6px">Just add this stylesheet to your html.</div>
+
+  <code class="yuzui" style="padding: 10px; display: inline-block">
     &lt;link rel="stylesheet"
     href="https://unpkg.com/@yuzu-health/yuzui/dist/all.min.css" /&gt;
   </code>
+
+  <div style="margin-top: 10px">
+    Since it's pure CSS, it works with Svelte, React, Vue, regular HTML sites
+    etc...
+  </div>
 
   <br />
 
   <h3>Buttons</h3>
   <div style="display: flex; flex-wrap: wrap; gap: 10px">
-    <button class="yuzui" onclick="changeTheme()">Change Theme</button>
+    <button class="yuzui" onclick="changeTheme()">Click me!</button>
     <a class="yuzui">A link</a>
+    <button class="yuzui pressed">Pressed</button>
     <button class="yuzui loading">When Loading</button>
     <button class="yuzui flush">You can offset</button>
+  </div>
+
+  <div style="display: grid; margin-top: 10px">
+    <code>&lt;button class="yuzui"&gt;Click me!&lt;/button&gt;</code>
+    <code>&lt;a class="yuzui"&gt;A link&lt;/a&gt;</code>
+    <code>&lt;button class="yuzui pressed"&gt;Pressed&lt;/button&gt;</code>
+    <code>&lt;button class="yuzui loading"&gt;When Loading&lt;/button&gt;</code>
+    <code>&lt;button class="yuzui flush"&gt;You can offset&lt;/button&gt;</code>
   </div>
 
   <br />
 
   <h3>Tooltips</h3>
   <div style="display: flex; gap: 10px">
-    <div
-      class="yuzui right"
-      style="padding: 4px"
-      data-tooltip="Example tooltip"
-    >
+    <div class="right" style="padding: 4px" data-tooltip="Example tooltip">
       Hover on me!
     </div>
 
     <div
-      class="yuzui top"
+      class="top"
       style="width: 50px; padding: 4px"
       data-tooltip="Example tooltip"
     >
@@ -116,20 +124,37 @@
     </div>
 
     <div
-      class="yuzui bottom"
+      class="bottom"
       style="width: 50px; padding: 4px"
       data-tooltip="Example tooltip"
     >
-      Button
+      Bottom
     </div>
 
     <div
-      class="yuzui left"
+      class="left"
       style="width: 50px; padding: 4px"
       data-tooltip="Example tooltip"
     >
       Left
     </div>
+  </div>
+
+  <div style="display: grid; margin-top: 10px">
+    <code>
+      &lt;div class="right" data-tooltip="Example tooltip"&gt;Hover on
+      me!&lt;/div&gt;
+    </code>
+    <code>
+      &lt;div class="top" data-tooltip="Example tooltip"&gt;Top&lt;/div&gt;
+    </code>
+    <code>
+      &lt;div class="bottom" data-tooltip="Example
+      tooltip"&gt;Bottom&lt;/div&gt;
+    </code>
+    <code>
+      &lt;div class="left" data-tooltip="Example tooltip"&gt; Left&lt;/div&gt;
+    </code>
   </div>
 
   <br />
@@ -140,17 +165,26 @@
     <input style="font-size: 16px" placeholder="an example input" />
   </div>
 
-  <br />
+  <br /><br />
 
-  <br />
+  <code>
+    &lt;div class="yuzui"&gt; &lt;input class="yuzui" /&gt; &lt;/div&gt;
+  </code>
+
+  <br /><br />
 
   <div class="yuzui">
     <textarea placeholder="an example textarea"></textarea>
   </div>
 
-  <br />
+  <br /><br />
 
-  <br />
+  <code
+    >&lt;div class="yuzui"&gt; &lt;textarea class="yuzui" /&gt;
+    &lt;/div&gt;</code
+  >
+
+  <br /><br />
 
   <h3>Panels</h3>
 
@@ -158,12 +192,16 @@
 
   <br />
 
+  <code>&lt;div class="yuzui"&gt; This is a panel &lt;/div&gt;</code>
+
+  <br /><br /><br />
+
   <div style="width: 400px">
     <div class="yuzui-row">
       <div class="yuzui" style="width: 100%; padding: 4px">Sign In</div>
     </div>
 
-    <form class="yuzui-row" style="display: inline-flex">
+    <form class="yuzui-row" style="margin-bottom: 0">
       <div class="yuzui">
         <input style="font-size: 16px" placeholder="Username" />
       </div>
@@ -174,9 +212,24 @@
     </form>
   </div>
 
-  <br />
+  <pre>
+&lt;div class="<b>yuzui-row</b>"&gt;
+  &lt;div class="yuzui" style="width: 100%; padding: 4px">
+    Sign In
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;form class="<b>yuzui-row</b>"&gt;
+  &lt;div class="yuzui"&gt;
+    &lt;input style="font-size: 16px" placeholder="Username" /&gt;
+  &lt;/div&gt;
+  &lt;div class="yuzui"&gt;
+    &lt;input style="font-size: 16px" placeholder="Password" type="password" /&gt;
+  &lt;/div&gt;
+  &lt;button class="yuzui"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+  </pre>
 
-  <form class="yuzui-column" style="display: grid; width: 200px">
+  <form class="yuzui-column" style="width: 200px">
     <div class="yuzui-row">
       <div class="yuzui" style="padding: 6px; flex-grow: 1">Sign In</div>
       <button class="yuzui" style="padding: 6px 12px">x</button>
@@ -189,6 +242,23 @@
     </div>
     <button class="yuzui" style="width: 100%">Submit</button>
   </form>
+
+  <pre>
+&lt;form class="<b>yuzui-column</b>"&gt;
+  &lt;div class="yuzui-row"&gt;
+    &lt;div class="yuzui" style="padding: 6px; flex-grow: 1">Sign In&lt;/div&gt;
+    &lt;button class="yuzui" style="padding: 6px 12px">x&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="yuzui"&gt;
+    &lt;input style="font-size: 16px" placeholder="Username" /&gt;
+  &lt;/div&gt;
+  &lt;div class="yuzui"&gt;
+    &lt;input style="font-size: 16px" placeholder="Password" type="password" /&gt;
+  &lt;/div&gt;
+  &lt;button class="yuzui" style="width: 100%">Submit&lt;/button&gt;
+&lt;/form&gt;
+</pre
+  >
 
   <br />
 
@@ -206,13 +276,20 @@
 
     <div
       class="yuzui-bg-dashes"
-      style="
-        width: 100px;
-        height: 100px;
-        color: rgba(0, 0, 0, 0.5);
-        --dashes-gap: 10px;
-      "
+      style="width: 100px; height: 100px; color: red; --dashes-gap: 10px"
     ></div>
+  </div>
+
+  <div style="display: grid; margin-top: 10px">
+    <code>&lt;div class="yuzui-bg-dots"&gt; &lt;/div&gt;</code>
+    <code>&lt;div class="yuzui-bg-dashes"&gt; &lt;/div&gt;</code>
+    <code>
+      &lt;div class="yuzui-bg-dots" style="--dot-size: 10px"&gt; &lt;/div&gt;
+    </code>
+    <code>
+      &lt;div class="yuzui-bg-dashes" style="--dashes-gap: 10px; color: red"&gt;
+      &lt;/div&gt;
+    </code>
   </div>
 
   <br />

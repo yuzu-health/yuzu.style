@@ -58,7 +58,7 @@
   }
 }
 
-:is(div, span):not(.button).yuzui {
+:not(button, a, .button).yuzui {
   border: 1px solid currentColor;
   box-shadow: currentColor var(--shadow) var(--shadow);
 
@@ -67,7 +67,7 @@
   }
 }
 
-:is(div, span):not(.button).yuzui > :is(input, textarea):only-child {
+:not(button, a, .button).yuzui > :is(input, textarea):only-child {
   color: currentColor;
   background: none !important;
   border: none !important;

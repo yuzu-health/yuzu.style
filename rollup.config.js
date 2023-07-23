@@ -1,7 +1,6 @@
 import postcss from "rollup-plugin-postcss";
-import postcssNesting from "postcss-nesting";
 
-const bundleNames = ["backgrounds", "panels", "themes", "tooltip"];
+const bundleNames = ["all", "backgrounds", "panels", "themes", "tooltip"];
 
 const configs = bundleNames.map((name) => {
   return {
@@ -11,15 +10,11 @@ const configs = bundleNames.map((name) => {
       format: "es",
     },
     plugins: [
-      postcss([
-        postcssNesting,
-        {
-          minimize: true,
-          sourceMap: true,
-          extract: true,
-          modules: false,
-        },
-      ]),
+      postcss({
+        inject: false,
+        minimize: true,
+        extract: true,
+      }),
     ],
   };
 });

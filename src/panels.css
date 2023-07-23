@@ -13,7 +13,7 @@
   font-weight: 500;
   border: 1px solid currentColor;
   text-decoration: none;
-  transition-property: none;
+  transition-property: box-shadow, transform;
   transition-duration: 75ms;
   cursor: pointer;
   font-size: 16px;

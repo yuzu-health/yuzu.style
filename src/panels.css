@@ -8,6 +8,7 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+  -webkit-touch-callout: none;
 
   position: relative;
   display: flex;

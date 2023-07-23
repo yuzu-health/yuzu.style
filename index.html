@@ -1,6 +1,6 @@
 <title>yuzUI</title>
 
-<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="viewport" content="width=device-width" />
 <link rel="stylesheet" type="text/css" href="./src/all.css" />
 
 <style>
@@ -222,7 +222,7 @@
 
   <br /><br /><br />
 
-  <div style="width: 400px">
+  <div style="max-width: 400px">
     <div class="yuzui-row">
       <div class="yuzui" style="width: 100%; padding: 4px">Sign In</div>
     </div>
@@ -240,7 +240,10 @@
 
   <pre>
 &lt;div class="<b>yuzui-row</b>"&gt;
-  &lt;div class="yuzui" style="width: 100%; padding: 4px">
+  &lt;div
+    class="yuzui"
+    style="width: 100%; padding: 4px"
+  &gt;
     Sign In
   &lt;/div&gt;
 &lt;/div&gt;
@@ -249,14 +252,14 @@
     &lt;input placeholder="Username" /&gt;
   &lt;/div&gt;
   &lt;div class="yuzui"&gt;
-    &lt;input placeholder="Password" type="password" /&gt;
+    &lt;input type="password" /&gt;
   &lt;/div&gt;
   &lt;button class="yuzui"&gt;Submit&lt;/button&gt;
 &lt;/form&gt;
   </pre>
 
   <div style="display: flex; gap: 10px">
-    <form class="yuzui-column" style="width: 200px">
+    <form class="yuzui-column" style="max-width: 200px">
       <div class="yuzui-row">
         <div class="yuzui" style="padding: 6px; flex-grow: 1">Sign In</div>
         <button class="yuzui" style="padding: 6px 12px">x</button>
@@ -267,10 +270,10 @@
       <div class="yuzui">
         <input style="font-size: 16px" placeholder="Password" type="password" />
       </div>
-      <button class="yuzui" style="width: 100%">Submit</button>
+      <button class="yuzui">Submit</button>
     </form>
 
-    <form class="yuzui-column all-flush" style="width: 200px">
+    <form class="yuzui-column all-flush" style="max-width: 200px">
       <div class="yuzui-row">
         <div class="yuzui" style="padding: 6px; flex-grow: 1">Sign In</div>
         <button class="yuzui" style="padding: 6px 12px">x</button>
@@ -281,23 +284,35 @@
       <div class="yuzui">
         <input style="font-size: 16px" placeholder="Password" type="password" />
       </div>
-      <button class="yuzui" style="width: 100%">Submit</button>
+      <button class="yuzui">Submit</button>
     </form>
   </div>
 
   <pre>
 &lt;form class="<b>yuzui-column</b>"&gt;
   &lt;div class="yuzui-row"&gt;
-    &lt;div class="yuzui" style="padding: 6px; flex-grow: 1">Sign In&lt;/div&gt;
-    &lt;button class="yuzui" style="padding: 6px 12px">x&lt;/button&gt;
+    &lt;div
+      class="yuzui"
+      style="padding: 6px; flex-grow: 1"
+    &gt;
+      Sign In
+    &lt;/div&gt;
+    &lt;button
+      class="yuzui"
+      style="padding: 6px 12px"
+    &gt;
+      x
+    &lt;/button&gt;
   &lt;/div&gt;
   &lt;div class="yuzui"&gt;
     &lt;input placeholder="Username" /&gt;
   &lt;/div&gt;
   &lt;div class="yuzui"&gt;
-    &lt;input placeholder="Password" type="password" /&gt;
+    &lt;input type="password" /&gt;
   &lt;/div&gt;
-  &lt;button class="yuzui" style="width: 100%">Submit&lt;/button&gt;
+  &lt;button class="yuzui"&gt;
+    Submit
+  &lt;/button&gt;
 &lt;/form&gt;
 </pre
   >

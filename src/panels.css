@@ -32,6 +32,11 @@
   box-shadow: var(--shadow) var(--shadow) var(--panel);
   transform: translate3d(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)), 0);
 
+  &:focus-visible {
+    color: var(--yuzui-accent, blue);
+    outline: none;
+  }
+
   &:not(:has(div)) {
     text-decoration: none;
     font-size: 16px;

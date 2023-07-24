@@ -5,14 +5,7 @@
   -webkit-text-size-adjust: 100%;
 }
 
-html {
-  -webkit-tap-highlight-color: transparent;
-}
-
 :is(button, a, .button).yuzui {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
 

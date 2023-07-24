@@ -1,6 +1,12 @@
+.yuzui-bg-dots,
+.yuzui-bg-dashes {
+  --bg-color: hsl(var(--yuzui-primary) / 0.1);
+  --color: var(--bg-color, currentColor);
+}
+
 .yuzui-bg-dots {
-  background-image: radial-gradient(currentColor 20%, transparent 21%),
-    radial-gradient(currentColor 20%, transparent 21%) !important;
+  background-image: radial-gradient(var(--color) 20%, transparent 21%),
+    radial-gradient(var(--color) 20%, transparent 21%) !important;
   background-size: calc(var(--dot-size, 3px) * 2) calc(var(--dot-size, 3px) * 2) !important;
   background-position: 0 0, var(--dot-size, 3px) var(--dot-size, 3px) !important;
   background-repeat: repeat !important;
@@ -11,7 +17,7 @@
     45deg,
     rgba(0, 0, 0, 0) 0px,
     rgba(0, 0, 0, 0) var(--dashes-gap, 3px),
-    currentColor var(--dashes-gap, 3px),
-    currentColor calc(var(--dashes-gap, 3px) + var(--dashes-width, 1px))
+    var(--color) var(--dashes-gap, 3px),
+    var(--color) calc(var(--dashes-gap, 3px) + var(--dashes-width, 1px))
   ) !important;
 }

@@ -132,10 +132,6 @@
   margin-top: -1px;
 }
 
-div:has:only(> .yuzui) {
-  margin-right: -1px;
-}
-
 .yuzui-column {
   display: grid;
 }
@@ -148,9 +144,10 @@ div:has:only(> .yuzui) {
   z-index: 1;
 }
 
-.yuzui.yuzui-column {
+.yuzui.yuzui-column:has(> .yuzui) {
   overflow-y: auto;
-  border: 0;
+  border: 0 !important;
+  background-color: none !important;
 }
 
 .yuzui-row:has(:is(button, a, .button).yuzui) ~ * {

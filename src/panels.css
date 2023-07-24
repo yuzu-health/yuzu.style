@@ -152,6 +152,7 @@
 
 .yuzui.yuzui-column:has(> .yuzui) {
   overflow-y: auto;
+  overflow-x: hidden;
   border: 0 !important;
   background-color: transparent !important;
 }

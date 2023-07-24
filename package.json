@@ -1,7 +1,7 @@
 {
   "name": "@yuzu-health/yuzui",
   "type": "module",
-  "version": "1.10.4",
+  "version": "1.11.0",
   "main": "/src/all.css",
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.27",
+    "postcss-import": "^15.1.0",
     "postcss-nesting": "^12.0.0",
     "postcss-preset-env": "^9.0.0",
     "rollup": "^3.26.3",

@@ -2,8 +2,9 @@ import postcss from "rollup-plugin-postcss";
 import autoprefixer from "autoprefixer";
 import postcssPresetEnv from "postcss-preset-env";
 import postcssNesting from "postcss-nesting";
+import postcssImport from "postcss-import";
 
-const bundleNames = ["all", "backgrounds", "panels", "themes", "tooltip"];
+const bundleNames = ["all"];
 
 const configs = bundleNames.map((name) => {
   return {
@@ -14,11 +15,16 @@ const configs = bundleNames.map((name) => {
     },
     plugins: [
       postcss({
-        plugins: [postcssNesting, autoprefixer, postcssPresetEnv],
+        plugins: [
+          postcssImport,
+          postcssNesting,
+          autoprefixer,
+          postcssPresetEnv,
+        ],
         path: "src",
         modules: false,
         inject: false,
-        // minimize: true,
+        minimize: true,
         extract: true,
         sourceMap: true,
       }),

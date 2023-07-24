@@ -50,6 +50,10 @@
     pointer-events: none;
   }
 
+  &:disabled {
+    color: hsl(var(--yuzui-primary) / 0.5);
+  }
+
   &.flush {
     transform: translate3d(0, 0, 0);
   }

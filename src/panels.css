@@ -1,6 +1,13 @@
 .yuzui {
   --shadow: var(--shadow-size, 4px);
-  background: var(--background-color, white);
+
+  --panel-color: hsl(var(--yuzui-panel, var(--yuzui-primary)));
+  --panel: var(--panel-color, currentColor);
+
+  --background-color: hsl(var(--yuzui-light));
+  background: var(--background-color, transparent);
+
+  --text-color: hsl(var(--yuzui-primary));
   color: var(--text-color, currentColor);
 }
 
@@ -14,20 +21,23 @@
   justify-content: center;
   padding: 6px 32px;
   font-weight: 500;
-  border: 1px solid currentColor;
+  border: 1px solid var(--panel);
   text-decoration: none;
+
+  -webkit-transition-property: box-shadow, transform;
+  -webkit-transition-duration: 75ms;
   transition-property: box-shadow, transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 75ms;
+
   cursor: pointer;
   opacity: 100%;
   font-size: 16px;
 
-  box-shadow: var(--shadow) var(--shadow) currentColor;
+  box-shadow: var(--shadow) var(--shadow) var(--panel);
   transform: translate(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)));
 
   &:is(:active, .pressed, .loading) {
-    box-shadow: 0px 0px currentColor;
+    box-shadow: 0px 0px var(--panel);
     transform: translate(0, 0);
     opacity: 100%;
   }
@@ -50,7 +60,7 @@
     animation: spin 1s linear infinite;
     display: inline-block;
     border-radius: 100%;
-    border: 2px solid currentColor;
+    border: 2px solid var(--panel);
     border-top-color: transparent;
     height: 12px;
     width: 12px;
@@ -59,8 +69,8 @@
 }
 
 :not(button, a, .button).yuzui {
-  border: 1px solid currentColor;
-  box-shadow: var(--shadow) var(--shadow) currentColor;
+  border: 1px solid var(--panel);
+  box-shadow: var(--shadow) var(--shadow) var(--panel);
 
   &:not(.flush) {
     transform: translate(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)));
@@ -72,7 +82,7 @@
 }
 
 :not(button, a, .button).yuzui > :is(input, textarea):only-child {
-  color: currentColor;
+  color: var(--text-color, currentColor);
   background: none !important;
   border: none !important;
   outline: none !important;

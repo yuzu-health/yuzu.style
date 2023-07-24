@@ -9,15 +9,13 @@
     font-family: sans-serif;
     margin: 0;
 
-    --primary: 0 0% 0%;
-    --light: 0 0% 93%;
-    --accent: 14 100% 50%;
+    --yuzui-primary: 0 0% 0%;
+    --yuzui-light: 0 0% 93%;
+    --yuzui-accent: 14 100% 50%;
+    --yuzui-panel: 0 0% 0%;
 
-    --text-color: hsl(var(--primary));
-    --background-color: hsl(var(--light));
-
-    color: var(--text-color);
-    background: var(--background-color);
+    color: hsl(var(--yuzui-primary));
+    background: hsl(var(--yuzui-light));
   }
 </style>
 
@@ -40,13 +38,14 @@
     pointer-events: none;
     top: 0;
     left: 0;
-    color: hsl(var(--primary) / 0.05);
+    color: hsl(var(--yuzui-primary) / 0.05);
     --dashes-gap: 6px;
     z-index: -1;
   "
 ></div>
 
 <main
+  class="yuzui-theme-selection"
   style="padding: 20px; max-width: 1024px; margin: 0 auto; overflow-x: hidden"
 >
   <h1>
@@ -58,13 +57,17 @@
 
   <div style="margin-bottom: 10px">
     Retro style components built purely with css.
-    <a href="https://github.com/yuzu-health/yuzUI" target="_blank">
-      Github repo here.</a
+    <a
+      href="https://github.com/yuzu-health/yuzUI"
+      style="color: hsl(var(--yuzui-accent))"
+      target="_blank"
     >
+      Github repo here.
+    </a>
     Powers
     <a
       href="https://yuzu.health"
-      style="color: hsl(var(--accent))"
+      style="color: hsl(var(--yuzui-accent))"
       target="_blank"
     >
       yuzu.health
@@ -72,7 +75,7 @@
     and
     <a
       href="https://yuzu.party"
-      style="color: hsl(var(--accent))"
+      style="color: hsl(var(--yuzui-accent))"
       target="_blank"
     >
       yuzu.party
@@ -81,7 +84,11 @@
 
   <div>
     Inspired by
-    <a href="https://thesephist.github.io/blocks.css/" target="_blank">
+    <a
+      href="https://thesephist.github.io/blocks.css/"
+      target="_blank"
+      style="color: hsl(var(--yuzui-primary))"
+    >
       blocks.css
     </a>
   </div>
@@ -92,7 +99,7 @@
 
   <code class="yuzui" style="padding: 10px; display: inline-block">
     &lt;link rel="stylesheet"
-    href="https://unpkg.com/@yuzu-health/yuzui/dist/all.min.css" /&gt;
+    href="https://yuzu-health.github.io/yuzUI/dist/all.min.css" /&gt;
   </code>
 
   <div style="margin-top: 10px">
@@ -128,33 +135,33 @@
 
   <h3>Tooltips</h3>
   <div style="display: flex; gap: 10px">
-    <div class="right" style="padding: 4px" data-tooltip="Example tooltip">
+    <span class="right" style="padding: 4px" data-tooltip="Example tooltip">
       Hover on me!
-    </div>
+    </span>
 
-    <div
+    <span
       class="top"
       style="width: 50px; padding: 4px"
       data-tooltip="Example tooltip"
     >
       Top
-    </div>
+    </span>
 
-    <div
+    <span
       class="bottom"
       style="width: 50px; padding: 4px"
       data-tooltip="Example tooltip"
     >
       Bottom
-    </div>
+    </span>
 
-    <div
+    <span
       class="left"
       style="width: 50px; padding: 4px"
       data-tooltip="Example tooltip"
     >
       Left
-    </div>
+    </span>
   </div>
 
   <div style="display: grid; margin-top: 10px">
@@ -365,4 +372,43 @@
   <br />
 
   <br />
+
+  <h3>Themes</h3>
+
+  <div style="display: grid; gap: 10px">
+    <div class="yuzui-theme-0 yuzui">Theme 0</div>
+    <div class="yuzui-theme-1 yuzui">Theme 1</div>
+    <div class="yuzui-theme-2 yuzui">Theme 2</div>
+    <div class="yuzui-theme-3 yuzui">Theme 3</div>
+    <div
+      class="yuzui"
+      style="
+        --yuzui-primary: 281 100% 50%;
+        --yuzui-light: 161 100% 16%;
+        --yuzui-panel: 0 100% 50%;
+      "
+    >
+      Custom theme with CSS Vars
+    </div>
+  </div>
+
+  <pre>
+&lt;div style="display: grid; gap: 10px"&gt;
+  &lt;div class="yuzui-theme-0 yuzui">Theme 0&lt;/div&gt;
+  &lt;div class="yuzui-theme-1 yuzui">Theme 1&lt;/div&gt;
+  &lt;div class="yuzui-theme-2 yuzui">Theme 2&lt;/div&gt;
+  &lt;div class="yuzui-theme-3 yuzui">Theme 3&lt;/div&gt;
+  &lt;div
+    class="yuzui"
+    style="
+      --yuzui-primary: 281 100% 50%;
+      --yuzui-light: 161 100% 16%;
+      --yuzui-panel: 0 100% 50%;
+      --yuzui-accent: 185 53% 50%;
+    "
+  &gt;
+    Custom theme with CSS Vars
+  &lt;/div&gt;
+&lt;/div&gt;
+  </pre>
 </main>

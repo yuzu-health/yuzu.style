@@ -1,27 +1,41 @@
 .yuzui-theme-0 {
-  --primary: 0 0% 0%;
-  --light: 0 0% 93%;
-  --accent: 14 100% 50%;
-  --panel: 0 0% 0%;
+  --yuzui-primary: 0 0% 0%;
+  --yuzui-light: 0 0% 93%;
+  --yuzui-accent: 14 100% 50%;
+  --yuzui-panel: 0 0% 0%;
 }
 
 .yuzui-theme-1 {
-  --primary: 50 34% 86%;
-  --light: 0 0% 17%;
-  --accent: 0 59% 55%;
-  --panel: 52 11% 26;
+  --yuzui-primary: 50 34% 86%;
+  --yuzui-light: 0 0% 17%;
+  --yuzui-accent: 0 59% 55%;
+  --yuzui-panel: 52 11% 26%;
 }
 
 .yuzui-theme-2 {
-  --primary: 0 0% 100%;
-  --light: 161 100% 16%;
-  --accent: 0 67% 69%;
-  --panel: 158 36% 31;
+  --yuzui-primary: 0 0% 100%;
+  --yuzui-light: 161 100% 16%;
+  --yuzui-accent: 0 67% 69%;
+  --yuzui-panel: 158 36% 31%;
 }
 
 .yuzui-theme-3 {
-  --primary: 0 0% 100%;
-  --light: 0 0% 0%;
-  --accent: 238 83% 63%;
-  --panel: 0 0% 15;
+  --yuzui-primary: 0 0% 100%;
+  --yuzui-light: 0 0% 0%;
+  --yuzui-accent: 238 83% 63%;
+  --yuzui-panel: 0 0% 15%;
+}
+
+.yuzui-theme-selection ::-moz-selection {
+  --accent-color: hsl(var(--yuzui-accent));
+  --light-color: hsl(var(--yuzui-light));
+  color: var(--light-color);
+  background-color: var(--accent-color);
+}
+
+.yuzui-theme-selection ::selection {
+  --accent-color: hsl(var(--yuzui-accent));
+  --light-color: hsl(var(--yuzui-light));
+  color: var(--light-color);
+  background-color: var(--accent-color);
 }

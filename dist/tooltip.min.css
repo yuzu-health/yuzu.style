@@ -1,6 +1,6 @@
 [data-tooltip] {
-  --text: var(--text-color, black);
-  --background: var(--background-color, white);
+  --text-color: hsl(var(--yuzui-primary));
+  --background-color: hsl(var(--yuzui-light));
 }
 
 [data-tooltip]:hover {
@@ -11,8 +11,10 @@
 [data-tooltip]:hover::before {
   -webkit-text-decoration: none;
   text-decoration: none;
-  background: var(--text);
-  color: var(--background);
+  background: black;
+  background: var(--text-color, black);
+  color: white;
+  color: var(--background-color, white);
   font-size: 12px;
   pointer-events: none;
   position: absolute;
@@ -32,7 +34,8 @@
   position: absolute;
   z-index: 99999;
   font-size: 10px;
-  color: var(--text);
+  color: black;
+  color: var(--text-color, black);
 }
 
 [data-tooltip]:hover::before,

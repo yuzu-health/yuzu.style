@@ -1,8 +1,15 @@
 .yuzui {
   --shadow: var(--shadow-size, 4px);
-  background: white;
-  background: var(--background-color, white);
-  color: currentColor;
+
+  --panel-color: hsl(var(--yuzui-panel, var(--yuzui-primary)));
+  --panel: var(--panel-color, currentColor);
+
+  --background-color: hsl(var(--yuzui-light));
+  background: hsl(var(--yuzui-light));
+  background: var(--background-color, transparent);
+
+  --text-color: hsl(var(--yuzui-primary));
+  color: hsl(var(--yuzui-primary));
   color: var(--text-color, currentColor);
 }
 
@@ -16,40 +23,43 @@ button.yuzui:not(.does-not-exist), a.yuzui:not(.does-not-exist), .button.yuzui {
   justify-content: center;
   padding: 6px 32px;
   font-weight: 500;
-  border: 1px solid currentColor;
+  border: 1px solid var(--panel);
   -webkit-text-decoration: none;
   text-decoration: none;
+
+  -webkit-transition-property: box-shadow, transform;
+  -webkit-transition-duration: 75ms;
   transition-property: box-shadow, transform;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 75ms;
+
   cursor: pointer;
   opacity: 1;
   font-size: 16px;
 
-  box-shadow: var(--shadow) var(--shadow) currentColor;
+  box-shadow: var(--shadow) var(--shadow) var(--panel);
   transform: translate(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)));
 }
 
 button.yuzui:not(.does-not-exist):active {
-    box-shadow: 0px 0px currentColor;
+    box-shadow: 0px 0px var(--panel);
     transform: translate(0, 0);
     opacity: 1;
   }
 
 a.yuzui:not(.does-not-exist):active {
-    box-shadow: 0px 0px currentColor;
+    box-shadow: 0px 0px var(--panel);
     transform: translate(0, 0);
     opacity: 1;
   }
 
 .yuzui.button:active {
-    box-shadow: 0px 0px currentColor;
+    box-shadow: 0px 0px var(--panel);
     transform: translate(0, 0);
     opacity: 1;
   }
 
 button.yuzui.pressed:not(.does-not-exist), button.yuzui.loading:not(.does-not-exist), a.yuzui.pressed:not(.does-not-exist), a.yuzui.loading:not(.does-not-exist), .yuzui.button.pressed, .yuzui.button.loading {
-    box-shadow: 0px 0px currentColor;
+    box-shadow: 0px 0px var(--panel);
     transform: translate(0, 0);
     opacity: 1;
   }
@@ -84,7 +94,7 @@ button.yuzui.loading:not(.does-not-exist)::after {
     animation: spin 1s linear infinite;
     display: inline-block;
     border-radius: 100%;
-    border: 2px solid currentColor;
+    border: 2px solid var(--panel);
     border-top-color: transparent;
     height: 12px;
     width: 12px;
@@ -97,7 +107,7 @@ a.yuzui.loading:not(.does-not-exist)::after {
     animation: spin 1s linear infinite;
     display: inline-block;
     border-radius: 100%;
-    border: 2px solid currentColor;
+    border: 2px solid var(--panel);
     border-top-color: transparent;
     height: 12px;
     width: 12px;
@@ -110,7 +120,7 @@ a.yuzui.loading:not(.does-not-exist)::after {
     animation: spin 1s linear infinite;
     display: inline-block;
     border-radius: 100%;
-    border: 2px solid currentColor;
+    border: 2px solid var(--panel);
     border-top-color: transparent;
     height: 12px;
     width: 12px;
@@ -118,8 +128,8 @@ a.yuzui.loading:not(.does-not-exist)::after {
   }
 
 :not(button):not(a):not(.button).yuzui {
-  border: 1px solid currentColor;
-  box-shadow: var(--shadow) var(--shadow) currentColor;
+  border: 1px solid var(--panel);
+  box-shadow: var(--shadow) var(--shadow) var(--panel);
 }
 
 .yuzui:not(button):not(a):not(.button):not(.flush) {
@@ -142,6 +152,7 @@ a.yuzui.loading:not(.does-not-exist)::after {
 
 .yuzui:not(button):not(a):not(.button) > input:only-child {
   color: currentColor;
+  color: var(--text-color, currentColor);
   width: 100%;
   padding: 6px;
   display: inline-block;
@@ -155,6 +166,7 @@ a.yuzui.loading:not(.does-not-exist)::after {
 
 .yuzui:not(button):not(a):not(.button) > textarea:only-child {
   color: currentColor;
+  color: var(--text-color, currentColor);
   width: 100%;
   padding: 6px;
   display: inline-block;

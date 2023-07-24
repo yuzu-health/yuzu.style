@@ -13,7 +13,9 @@
   color: var(--text-color, currentColor);
 }
 
-button.yuzui:not(.does-not-exist), a.yuzui:not(.does-not-exist), .button.yuzui {
+button.yuzui,
+a.yuzui,
+.button.yuzui {
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
 
@@ -42,92 +44,109 @@ button.yuzui:not(.does-not-exist), a.yuzui:not(.does-not-exist), .button.yuzui {
   transform: translate3d(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)), 0);
 }
 
-button.yuzui:not(.does-not-exist):active {
-    box-shadow: 0px 0px var(--panel);
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
+button.yuzui:active {
+  box-shadow: 0px 0px var(--panel);
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
 
 a.yuzui:not(.does-not-exist):active {
-    box-shadow: 0px 0px var(--panel);
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
+  box-shadow: 0px 0px var(--panel);
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
 
 .yuzui.button:active {
-    box-shadow: 0px 0px var(--panel);
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
+  box-shadow: 0px 0px var(--panel);
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
 
-button.yuzui.pressed:not(.does-not-exist), button.yuzui.loading:not(.does-not-exist), a.yuzui.pressed:not(.does-not-exist), a.yuzui.loading:not(.does-not-exist), .yuzui.button.pressed, .yuzui.button.loading {
-    box-shadow: 0px 0px var(--panel);
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
+button.yuzui.pressed:not(.does-not-exist),
+button.yuzui.loading:not(.does-not-exist),
+a.yuzui.pressed:not(.does-not-exist),
+a.yuzui.loading:not(.does-not-exist),
+.yuzui.button.pressed,
+.yuzui.button.loading {
+  box-shadow: 0px 0px var(--panel);
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
 
-button.yuzui.loading:not(.does-not-exist), button.yuzui.pressed:not(.does-not-exist), a.yuzui.loading:not(.does-not-exist), a.yuzui.pressed:not(.does-not-exist), .yuzui.button.loading, .yuzui.button.pressed {
-    pointer-events: none;
-  }
+button.yuzui.loading:not(.does-not-exist),
+button.yuzui.pressed:not(.does-not-exist),
+a.yuzui.loading:not(.does-not-exist),
+a.yuzui.pressed:not(.does-not-exist),
+.yuzui.button.loading,
+.yuzui.button.pressed {
+  pointer-events: none;
+}
 
-button.yuzui.flush:not(.does-not-exist), a.yuzui.flush:not(.does-not-exist), .yuzui.flush.button {
-    transform: translate3d(0, 0, 0);
-  }
+button.yuzui.flush:not(.does-not-exist),
+a.yuzui.flush:not(.does-not-exist),
+.yuzui.flush.button {
+  transform: translate3d(0, 0, 0);
+}
 
 button.yuzui.flush:not(.does-not-exist):active {
-    transform: translate3d(var(--shadow), var(--shadow), 0);
-  }
+  transform: translate3d(var(--shadow), var(--shadow), 0);
+}
 
 a.yuzui.flush:not(.does-not-exist):active {
-    transform: translate3d(var(--shadow), var(--shadow), 0);
-  }
+  transform: translate3d(var(--shadow), var(--shadow), 0);
+}
 
 .yuzui.flush.button:active {
-    transform: translate3d(var(--shadow), var(--shadow), 0);
-  }
+  transform: translate3d(var(--shadow), var(--shadow), 0);
+}
 
-button.yuzui.flush.pressed:not(.does-not-exist), button.yuzui.flush.loading:not(.does-not-exist), a.yuzui.flush.pressed:not(.does-not-exist), a.yuzui.flush.loading:not(.does-not-exist), .yuzui.flush.button.pressed, .yuzui.flush.button.loading {
-    transform: translate3d(var(--shadow), var(--shadow), 0);
-  }
+button.yuzui.flush.pressed:not(.does-not-exist),
+button.yuzui.flush.loading:not(.does-not-exist),
+a.yuzui.flush.pressed:not(.does-not-exist),
+a.yuzui.flush.loading:not(.does-not-exist),
+.yuzui.flush.button.pressed,
+.yuzui.flush.button.loading {
+  transform: translate3d(var(--shadow), var(--shadow), 0);
+}
 
 button.yuzui.loading:not(.does-not-exist)::after {
-    position: absolute;
-    right: 6px;
-    animation: spin 1s linear infinite;
-    display: inline-block;
-    border-radius: 100%;
-    border: 2px solid currentColor;
-    border-top-color: transparent;
-    height: 12px;
-    width: 12px;
-    content: "";
-  }
+  position: absolute;
+  right: 6px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  border-radius: 100%;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  height: 12px;
+  width: 12px;
+  content: "";
+}
 
 a.yuzui.loading:not(.does-not-exist)::after {
-    position: absolute;
-    right: 6px;
-    animation: spin 1s linear infinite;
-    display: inline-block;
-    border-radius: 100%;
-    border: 2px solid currentColor;
-    border-top-color: transparent;
-    height: 12px;
-    width: 12px;
-    content: "";
-  }
+  position: absolute;
+  right: 6px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  border-radius: 100%;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  height: 12px;
+  width: 12px;
+  content: "";
+}
 
 .yuzui.loading.button::after {
-    position: absolute;
-    right: 6px;
-    animation: spin 1s linear infinite;
-    display: inline-block;
-    border-radius: 100%;
-    border: 2px solid currentColor;
-    border-top-color: transparent;
-    height: 12px;
-    width: 12px;
-    content: "";
-  }
+  position: absolute;
+  right: 6px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  border-radius: 100%;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  height: 12px;
+  width: 12px;
+  content: "";
+}
 
 :not(button):not(a):not(.button).yuzui {
   border: 1px solid var(--panel);
@@ -135,20 +154,16 @@ a.yuzui.loading:not(.does-not-exist)::after {
 }
 
 .yuzui:not(button):not(a):not(.button):not(.flush) {
-    transform: translate3d(
-      calc(-1 * var(--shadow)),
-      calc(-1 * var(--shadow)),
-      0
-    );
-  }
+  transform: translate3d(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)), 0);
+}
 
 .yuzui:not(button):not(a):not(.button):has(input:only-child) {
-    display: inline-block;
-  }
+  display: inline-block;
+}
 
 .yuzui:not(button):not(a):not(.button):has(textarea:only-child) {
-    display: inline-block;
-  }
+  display: inline-block;
+}
 
 .yuzui:not(button):not(a):not(.button) > input:only-child {
   background: none !important;
@@ -194,7 +209,12 @@ a.yuzui.loading:not(.does-not-exist)::after {
   transform: translate3d(var(--shadow), var(--shadow), 0) !important;
 }
 
-.all-flush button.yuzui.pressed:not(.does-not-exist), .all-flush button.yuzui.loading:not(.does-not-exist), .all-flush a.yuzui.pressed:not(.does-not-exist), .all-flush a.yuzui.loading:not(.does-not-exist), .all-flush .button.yuzui.pressed, .all-flush .button.yuzui.loading {
+.all-flush button.yuzui.pressed:not(.does-not-exist),
+.all-flush button.yuzui.loading:not(.does-not-exist),
+.all-flush a.yuzui.pressed:not(.does-not-exist),
+.all-flush a.yuzui.loading:not(.does-not-exist),
+.all-flush .button.yuzui.pressed,
+.all-flush .button.yuzui.loading {
   transform: translate3d(var(--shadow), var(--shadow), 0) !important;
 }
 
@@ -206,7 +226,9 @@ a.yuzui.loading:not(.does-not-exist)::after {
   margin-right: -1px;
 }
 
-.yuzui-row > button.yuzui:not(.does-not-exist) ~ *, .yuzui-row > a.yuzui:not(.does-not-exist) ~ *, .yuzui-row > .button.yuzui ~ * {
+.yuzui-row > button.yuzui:not(.does-not-exist) ~ *,
+.yuzui-row > a.yuzui:not(.does-not-exist) ~ *,
+.yuzui-row > .button.yuzui ~ * {
   z-index: 1;
 }
 

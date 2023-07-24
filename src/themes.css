@@ -30,7 +30,6 @@
   --primary-color: hsl(var(--yuzui-primary));
   --light-color: hsl(var(--yuzui-light));
   color: var(--primary-color);
-  background-color: var(--light-color);
 }
 
 .yuzui-theme ::-moz-selection {

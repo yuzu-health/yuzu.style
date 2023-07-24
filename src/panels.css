@@ -33,7 +33,7 @@
   transform: translate3d(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)), 0);
 
   &:focus-visible {
-    color: var(--yuzui-accent, blue);
+    color: hsl(var(--yuzui-accent, 217 82% 50%));
     outline: none;
   }
 

@@ -43,7 +43,9 @@
 .yuzui-theme *,
 .yuzui-theme :before,
 .yuzui-theme :after {
-  border-color: hsl(var(--yuzui-primary) / 0.1);
+  --border-color: hsl(var(--yuzui-panel));
+  --light-text-color: hsl(var(--yuzui-primary) / 0.1);
+  border-color: var(--border-color, var(--light-text-color));
 }
 
 .yuzui-fadein {

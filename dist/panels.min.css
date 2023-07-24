@@ -28,8 +28,10 @@ button.yuzui:not(.does-not-exist), a.yuzui:not(.does-not-exist), .button.yuzui {
   text-decoration: none;
 
   -webkit-transition-property: box-shadow, transform;
+  -webkit-transition-timing-function: linear;
   -webkit-transition-duration: 75ms;
   transition-property: box-shadow, transform;
+  transition-timing-function: linear;
   transition-duration: 75ms;
 
   cursor: pointer;

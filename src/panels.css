@@ -34,11 +34,11 @@
   font-size: 16px;
 
   box-shadow: var(--shadow) var(--shadow) var(--panel);
-  transform: translate(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)));
+  transform: translate3d(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)), 0);
 
   &:is(:active, .pressed, .loading) {
     box-shadow: 0px 0px var(--panel);
-    transform: translate(0, 0);
+    transform: translate3d(0, 0, 0);
     opacity: 100%;
   }
 
@@ -47,11 +47,11 @@
   }
 
   &.flush {
-    transform: translate(0);
+    transform: translate3d(0, 0, 0);
   }
 
   &.flush:is(:active, .pressed, .loading) {
-    transform: translate(var(--shadow), var(--shadow));
+    transform: translate3d(var(--shadow), var(--shadow), 0);
   }
 
   &.loading::after {
@@ -73,7 +73,11 @@
   box-shadow: var(--shadow) var(--shadow) var(--panel);
 
   &:not(.flush) {
-    transform: translate(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)));
+    transform: translate3d(
+      calc(-1 * var(--shadow)),
+      calc(-1 * var(--shadow)),
+      0
+    );
   }
 
   &:has(:is(input, textarea):only-child) {
@@ -92,11 +96,11 @@
 }
 
 .all-flush .yuzui {
-  transform: translate(0) !important;
+  transform: translate3d(0, 0, 0) !important;
 }
 
 .all-flush :is(button, a, .button).yuzui:is(:active, .pressed, .loading) {
-  transform: translate(var(--shadow), var(--shadow)) !important;
+  transform: translate3d(var(--shadow), var(--shadow), 0) !important;
 }
 
 .yuzui-row {

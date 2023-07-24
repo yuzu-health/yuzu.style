@@ -4,7 +4,6 @@
 }
 
 [data-tooltip]:hover {
-  will-change: transform, opacity;
   position: relative;
 }
 
@@ -96,47 +95,47 @@
 @keyframes tooltip-fade-in {
   0% {
     opacity: 0;
-    transform: translate(-50%, calc(-100% + 10px));
+    transform: translate3d(-50%, calc(-100% + 10px), 0);
   }
 
   100% {
     opacity: 1;
-    transform: translate(-50%, -100%);
+    transform: translate3d(-50%, -100%, 0);
   }
 }
 
 @keyframes tooltip-fade-in-down {
   0% {
     opacity: 0;
-    transform: translate(-50%, calc(100% - 10px));
+    transform: translate3d(-50%, calc(100% - 10px), 0);
   }
 
   100% {
     opacity: 1;
-    transform: translate(-50%, 100%);
+    transform: translate3d(-50%, 100%, 0);
   }
 }
 
 @keyframes tooltip-fade-in-left {
   0% {
     opacity: 0;
-    transform: translate(calc(-100% + 10px), -50%);
+    transform: translate3d(calc(-100% + 10px), -50%, 0);
   }
 
   100% {
     opacity: 1;
-    transform: translate(-100%, -50%);
+    transform: translate3d(-100%, -50%, 0);
   }
 }
 
 @keyframes tooltip-fade-in-right {
   0% {
     opacity: 0;
-    transform: translate(calc(100% - 10px), -50%);
+    transform: translate3d(calc(100% - 10px), -50%, 0);
   }
 
   100% {
     opacity: 1;
-    transform: translate(100%, -50%);
+    transform: translate3d(100%, -50%, 0);
   }
 }

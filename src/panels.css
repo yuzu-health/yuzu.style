@@ -2,12 +2,11 @@
   --shadow: var(--shadow-size, 4px);
   background: var(--background-color, white);
   color: var(--text-color, currentColor);
-  -webkit-text-size-adjust: 100%;
 }
 
 :is(button, a, .button).yuzui {
   -webkit-touch-callout: none;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
 
   position: relative;
   display: flex;
@@ -21,9 +20,8 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 75ms;
   cursor: pointer;
-  font-size: 16px;
-  background-image: none;
   opacity: 100%;
+  font-size: 16px;
 
   box-shadow: var(--shadow) var(--shadow) currentColor;
   transform: translate(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)));

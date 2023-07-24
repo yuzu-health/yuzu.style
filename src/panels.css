@@ -60,7 +60,7 @@
     animation: spin 1s linear infinite;
     display: inline-block;
     border-radius: 100%;
-    border: 2px solid var(--panel);
+    border: 2px solid currentColor;
     border-top-color: transparent;
     height: 12px;
     width: 12px;

@@ -1,17 +1,17 @@
-.yuzui {
+*.yuzui {
   --shadow: var(--shadow-size, 4px);
 
   --panel-color: hsl(var(--yuzui-panel, var(--yuzui-primary)));
   --panel: var(--panel-color, currentColor);
 
   --background-color: hsl(var(--yuzui-light));
-  background: var(--background-color, transparent);
-
   --text-color: hsl(var(--yuzui-primary));
-  color: var(--text-color, currentColor);
 }
 
 :is(button, a, .button).yuzui {
+  background-color: var(--background-color, transparent);
+  color: var(--text-color, currentColor);
+
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
   appearance: none;
@@ -75,6 +75,8 @@
 :not(button, a, .button).yuzui {
   border: 1px solid var(--panel);
   box-shadow: var(--shadow) var(--shadow) var(--panel);
+  background-color: var(--background-color, transparent);
+  color: var(--text-color, currentColor);
 
   &:not(.flush) {
     transform: translate3d(

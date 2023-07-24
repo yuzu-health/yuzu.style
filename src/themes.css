@@ -26,6 +26,13 @@
   --yuzui-panel: 0 0% 15%;
 }
 
+.yuzui-theme {
+  --primary-color: hsl(var(--yuzui-primary));
+  --light-color: hsl(var(--yuzui-light));
+  color: var(--primary-color);
+  background-color: var(--light-color);
+}
+
 .yuzui-theme ::-moz-selection {
   --accent-color: hsl(var(--yuzui-accent));
   --light-color: hsl(var(--yuzui-light));
@@ -43,9 +50,9 @@
 .yuzui-theme *,
 .yuzui-theme :before,
 .yuzui-theme :after {
-  --border-color: hsl(var(--yuzui-panel));
+  --panel-color: hsl(var(--yuzui-panel));
   --light-text-color: hsl(var(--yuzui-primary) / 0.1);
-  border-color: var(--border-color, var(--light-text-color));
+  border-color: var(--panel-color, var(--light-text-color));
 }
 
 .yuzui-fadein {

@@ -59,6 +59,8 @@
 
   &:disabled {
     color: hsl(var(--yuzui-primary) / 0.5);
+    pointer-events: none;
+    cursor: not-allowed;
   }
 
   &.flush {

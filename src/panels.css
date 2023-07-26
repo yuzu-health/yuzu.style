@@ -139,7 +139,8 @@
 }
 
 .yuzui-column {
-  display: grid;
+  display: flex;
+  flex-direction: column;
 }
 
 .yuzui-column > *:not(:first-child) {

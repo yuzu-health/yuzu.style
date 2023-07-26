@@ -90,27 +90,12 @@
   display: inline-block;
 }
 
-.all-flush.yuzui,
-.all-flush .yuzui,
-.yuzui.flush {
-  transform: translate3d(0, 0, 0);
-
-  &:is(button, a, .button):active,
-  &:is(.pressed, .loading) {
-    transform: translate3d(var(--shadow), var(--shadow), 0);
-  }
-}
-
 .yuzui-column {
   display: flex;
   flex-direction: column;
 
-  & > * {
-    &:not(:first-child) {
-      margin-top: -1px;
-    }
-
-    flex-shrink: 0;
+  & > *:not(:first-child) {
+    margin-top: -1px;
   }
 }
 
@@ -121,30 +106,25 @@
 .yuzui.yuzui-column:has(> .yuzui) {
   overflow-y: auto;
   overflow-x: hidden;
-  padding-right: var(--shadow);
-  margin-right: calc(-1 * var(--shadow));
-  padding-bottom: var(--shadow);
-  margin-bottom: calc(-1 * var(--shadow));
-  border: 0 !important;
-  box-shadow: none !important;
-  background-color: transparent !important;
+  background-color: var(--text-color, currentColor);
+
+  & > :first-child {
+    border-top: 0;
+  }
+
+  & > :last-child {
+    border-bottom: 0;
+  }
 }
 
-.yuzui.yuzui-column .yuzui {
+.yuzui.yuzui-column > .yuzui {
+  border-left: 0;
+  border-right: 0;
   transform: translate3d(0, 0, 0) !important;
-}
 
-.yuzui.yuzui-column
-  :is(button, a, .button).yuzui:is(:active, .pressed, .loading) {
-  transform: translate3d(var(--shadow), var(--shadow), 0) !important;
-}
-
-.yuzui + .yuzui.yuzui-column > :first-child {
-  margin-top: -1px;
-}
-
-.yuzui.yuzui-column:has(+ .yuzui) > :last-child {
-  border-bottom: 0;
+  &:is(button, a, .button):is(:active, .pressed, .loading) {
+    transform: translate3d(var(--shadow), var(--shadow), 0) !important;
+  }
 }
 
 .yuzui-row:has(:is(button, a, .button).yuzui) ~ * {

@@ -7,10 +7,13 @@
   --background-color: hsl(var(--yuzui-light));
   --text-color: hsl(var(--yuzui-primary));
 
-  background-color: var(--background-color, transparent);
-  color: var(--text-color, currentColor);
+  &:not(.does-not-exist) {
+    background-color: var(--background-color, transparent);
+    color: var(--text-color, currentColor);
+    border: 1px solid var(--panel);
+  }
+
   transform: translate3d(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)), 0);
-  border: 1px solid var(--panel);
   box-shadow: var(--shadow) var(--shadow) var(--panel);
 
   &:is(button, a, .button):active,

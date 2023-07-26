@@ -98,10 +98,6 @@
       0
     );
   }
-
-  &:has(:is(input, textarea):only-child) {
-    display: inline-block;
-  }
 }
 
 :not(button, a, .button).yuzui > :is(input, textarea):only-child {
@@ -156,6 +152,14 @@
   overflow-x: hidden;
   border: 0 !important;
   background-color: transparent !important;
+}
+
+.yuzui + .yuzui.yuzui-column > :first-child {
+  border-top: 0;
+}
+
+.yuzui.yuzui-column:has(+ .yuzui) > :last-child {
+  border-bottom: 0;
 }
 
 .yuzui-row:has(:is(button, a, .button).yuzui) ~ * {

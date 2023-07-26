@@ -18,6 +18,9 @@
     box-shadow: 0px 0px var(--panel);
     transform: translate3d(0, 0, 0);
     opacity: 100%;
+  }
+
+  &:is(.pressed, .loading) {
     pointer-events: none;
   }
 }

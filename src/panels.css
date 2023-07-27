@@ -127,6 +127,15 @@
   }
 }
 
+.yuzui.yuzui-column::after {
+  content: "";
+  border-top: 1px solid var(--panel);
+  background-color: var(--background-color, transparent);
+  flex-grow: 1;
+  width: 100%;
+  z-index: 1;
+}
+
 .yuzui-row:has(:is(button, a, .button).yuzui) ~ * {
   z-index: 1;
 }

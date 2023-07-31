@@ -42,11 +42,18 @@
 
 [data-tooltip]:hover::after,
 .top[data-tooltip]:hover::after {
-  top: -2px;
+  top: -5px;
   left: 50%;
   bottom: auto;
-  content: "\25BC";
+  content: "";
   animation: tooltip-fade-in 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+
+  width: 8px;
+  border-top: 8px solid currentColor;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-bottom: none;
+  box-sizing: border-box;
 }
 
 .bottom[data-tooltip]:hover::before {
@@ -57,11 +64,18 @@
 }
 
 .bottom[data-tooltip]:hover::after {
-  bottom: -2px;
+  bottom: -5px;
   left: 50%;
   top: auto;
-  content: "\25B2";
+  content: "";
   animation: tooltip-fade-in-down 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+
+  width: 8px;
+  border-bottom: 8px solid currentColor;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+  border-top: none;
+  box-sizing: border-box;
 }
 
 .left[data-tooltip]:hover::before {
@@ -73,8 +87,15 @@
 .left[data-tooltip]:hover::after {
   left: -4px;
   top: 50%;
-  content: "\25B6";
+  content: "";
   animation: tooltip-fade-in-left 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+
+  height: 8px;
+  border-left: 8px solid currentColor;
+  border-bottom: 4px solid transparent;
+  border-top: 4px solid transparent;
+  border-right: none;
+  box-sizing: border-box;
 }
 
 .right[data-tooltip]:hover::before {
@@ -88,8 +109,14 @@
   right: -4px;
   left: auto;
   top: 50%;
-  content: "\25C0";
   animation: tooltip-fade-in-right 0.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+
+  height: 8px;
+  border-right: 8px solid currentColor;
+  border-bottom: 4px solid transparent;
+  border-top: 4px solid transparent;
+  border-left: none;
+  box-sizing: border-box;
 }
 
 @keyframes tooltip-fade-in {

@@ -13,14 +13,14 @@
     border: 1px solid var(--panel);
   }
 
-  transform: translate3d(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)), 0);
   box-shadow: var(--shadow) var(--shadow) var(--panel);
+  transform: translate3d(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)), 0);
 
   &:is(button, a, .button):active,
   &:is(.pressed, .loading) {
     box-shadow: 0px 0px var(--panel);
-    transform: translate3d(0, 0, 0);
     opacity: 100%;
+    transform: translate3d(0, 0, 0);
   }
 
   &:is(.pressed, .loading) {
@@ -96,6 +96,16 @@
   &.loading:empty::after {
     position: relative;
     right: auto;
+  }
+}
+
+.all-flush .yuzui,
+.yuzui.flush {
+  transform: translate3d(0, 0, 0) !important;
+
+  &:is(button, a, .button):active,
+  &:is(.pressed, .loading) {
+    transform: translate3d(var(--shadow), var(--shadow), 0);
   }
 }
 

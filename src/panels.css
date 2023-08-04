@@ -99,9 +99,9 @@
   }
 }
 
-.all-flush .yuzui,
-.yuzui.flush {
-  transform: translate3d(0, 0, 0) !important;
+.all-flush *.yuzui,
+*.yuzui.flush {
+  transform: translate3d(0, 0, 0);
 
   &:is(button, a, .button):active,
   &:is(.pressed, .loading) {

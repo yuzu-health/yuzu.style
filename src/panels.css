@@ -1,8 +1,8 @@
 *.yuzui {
   --shadow: var(--shadow-size, 4px);
 
-  --panel-color: hsl(var(--yuzui-panel, var(--yuzui-primary)));
-  --panel: var(--panel-color, currentColor);
+  --panel-coloring: hsl(var(--yuzui-panel, var(--yuzui-primary)));
+  --panel: var(--panel-coloring, currentColor);
 
   --background-color: hsl(var(--yuzui-light));
   --text-color: hsl(var(--yuzui-primary));

@@ -7,11 +7,9 @@
   --background-color: hsl(var(--yuzui-light));
   --text-color: hsl(var(--yuzui-primary));
 
-  &:not(.does-not-exist) {
-    background-color: var(--background-color, transparent);
-    color: var(--text-color, currentColor);
-    border: 1px solid var(--panel);
-  }
+  background-color: var(--background-color, inherit);
+  color: var(--text-color, currentColor);
+  border: 1px solid var(--panel);
 
   box-shadow: var(--shadow) var(--shadow) var(--panel);
   transform: translate3d(calc(-1 * var(--shadow)), calc(-1 * var(--shadow)), 0);
@@ -73,7 +71,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: var(--background-color, transparent);
+    background-color: var(--background-color, inherit);
     content: "";
   }
 
@@ -181,7 +179,7 @@
   content: "";
   border-top: 1px solid var(--panel);
   margin-top: -1px;
-  background-color: var(--background-color, transparent);
+  background-color: var(--background-color, inherit);
   flex-grow: 1;
   width: 100%;
   z-index: 1;

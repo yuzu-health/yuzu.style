@@ -1,7 +1,7 @@
 {
   "name": "@yuzu-health/yuzui",
   "type": "module",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "main": "/dist/all.min.css",
   "repository": {
     "type": "git",

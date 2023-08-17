@@ -1,7 +1,12 @@
 .yuzui-bg-dots,
 .yuzui-bg-dashes {
-  --bg-color: hsl(var(--yuzui-primary) / 0.1);
-  --color: var(--bg-color, currentColor);
+  --color: currentColor;
+
+  &.-use-panel {
+    --panel-color: hsl(var(--yuzui-panel));
+    --bg-color: hsl(var(--yuzui-primary) / 0.1);
+    --color: var(--panel-color, var(--bg-color));
+  }
 }
 
 .yuzui-bg-dots {

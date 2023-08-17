@@ -1,7 +1,7 @@
 *.yuzui {
   --shadow: var(--shadow-size, 4px);
 
-  --panel-coloring: hsl(var(--yuzui-panel, var(--yuzui-primary)));
+  --panel-coloring: hsl(var(--yuzui-panel));
   --panel: var(--panel-coloring, currentColor);
 
   --background-color: hsl(var(--yuzui-light));
@@ -135,7 +135,7 @@
 .yuzui.yuzui-column:has(> .yuzui) {
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: var(--text-color, currentColor);
+  background-color: var(--panel);
 
   & > :first-child {
     border-top: 0;

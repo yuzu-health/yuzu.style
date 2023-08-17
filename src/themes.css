@@ -2,28 +2,39 @@
   --yuzui-primary: 0 0% 0%;
   --yuzui-light: 0 0% 93%;
   --yuzui-accent: 14 100% 50%;
-  --yuzui-panel: 0 0% 0%;
 }
 
 .yuzui-theme-1 {
   --yuzui-primary: 50 34% 86%;
   --yuzui-light: 0 0% 17%;
   --yuzui-accent: 0 59% 55%;
-  --yuzui-panel: 52 11% 26%;
+
+  &.-with-panel,
+  .-with-panel {
+    --yuzui-panel: 52 11% 26%;
+  }
 }
 
 .yuzui-theme-2 {
   --yuzui-primary: 0 0% 100%;
   --yuzui-light: 161 100% 16%;
   --yuzui-accent: 0 67% 69%;
-  --yuzui-panel: 158 36% 31%;
+
+  &.-with-panel,
+  .-with-panel {
+    --yuzui-panel: 158 36% 31%;
+  }
 }
 
 .yuzui-theme-3 {
   --yuzui-primary: 0 0% 100%;
   --yuzui-light: 0 0% 0%;
   --yuzui-accent: 238 83% 63%;
-  --yuzui-panel: 0 0% 15%;
+
+  &.-with-panel,
+  .-with-panel {
+    --yuzui-panel: 0 0% 15%;
+  }
 }
 
 .yuzui-theme {
@@ -49,7 +60,7 @@
 .yuzui-theme *,
 .yuzui-theme :before,
 .yuzui-theme :after {
-  /* --panel-color: hsl(var(--yuzui-panel)); */
+  --panel-color: hsl(var(--yuzui-panel));
   --light-text-color: hsl(var(--yuzui-primary) / 0.1);
   border-color: var(--panel-color, var(--light-text-color));
 }

@@ -11,7 +11,6 @@
     --yuzui-primary: 0 0% 0%;
     --yuzui-light: 0 0% 93%;
     --yuzui-accent: 14 100% 50%;
-    --yuzui-panel: 0 0% 0%;
 
     color: hsl(var(--yuzui-primary));
     background: hsl(var(--yuzui-light));
@@ -24,12 +23,12 @@
   function changeTheme() {
     const body = document.querySelector("body");
     theme = (theme + 1) % 4;
-    body.className = `yuzui-theme-${theme}`;
+    body.className = `yuzui-theme-${theme} -with-panel`;
   }
 </script>
 
 <div
-  class="yuzui-bg-dashes"
+  class="yuzui-bg-dashes -use-panel"
   style="
     position: fixed;
     height: 100vh;

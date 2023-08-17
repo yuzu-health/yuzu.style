@@ -1,8 +1,8 @@
 {
   "name": "@yuzu-health/yuzui",
   "type": "module",
-  "version": "1.18.0",
-  "main": "/src/all.css",
+  "version": "1.19.0",
+  "main": "/dist/all.min.css",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/yuzu-health/yuzUI.git"

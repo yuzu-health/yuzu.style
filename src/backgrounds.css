@@ -1,5 +1,8 @@
 .yuzui-bg-dots,
-.yuzui-bg-dashes {
+.yuzui-bg-dashes,
+.yuzui-bg-grid,
+.yuzui-bg-grid-dots,
+.yuzui-bg-grid-space {
   --color: currentColor;
 
   &.-use-panel {
@@ -25,4 +28,44 @@
     var(--color) var(--dashes-gap, 3px),
     var(--color) calc(var(--dashes-gap, 3px) + var(--dashes-width, 1px))
   ) !important;
+}
+
+.yuzui-bg-grid {
+  background-size: calc(2 * var(--dimension, 40px)) var(--dimension, 40px);
+  background-repeat: repeat;
+  background-position: center 0;
+  background-image: linear-gradient(
+      to right,
+      var(--color) var(--stroke-width, 1px),
+      transparent var(--stroke-width, 1px),
+      transparent var(--dimension, 40px),
+      var(--color) calc(var(--dimension, 40px) + var(--stroke-width, 1px)),
+      transparent calc(var(--dimension, 40px) + 2 * var(--stroke-width, 1px))
+    ),
+    linear-gradient(
+      to bottom,
+      var(--color) var(--stroke-width, 1px),
+      transparent var(--stroke-width, 1px)
+    );
+}
+
+.yuzui-layout-grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(
+    auto-fill,
+    var(--dimension, 40px) var(--dimension, 40px)
+  );
+  grid-auto-rows: var(--dimension, 40px);
+}
+
+.yuzui-bg-grid-dots {
+  background-size: var(--dimension, 40px) var(--dimension, 40px);
+  background-repeat: repeat;
+  background-position: center 0;
+  background-image: radial-gradient(
+    circle,
+    var(--color) var(--stroke-width, 1px),
+    rgba(0, 0, 0, 0) var(--stroke-width, 1px)
+  );
 }

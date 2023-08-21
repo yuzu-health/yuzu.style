@@ -44,17 +44,17 @@
 }
 
 .yuzui-theme ::-moz-selection {
-  --accent-color: hsl(var(--yuzui-accent));
+  --primary-color: hsl(var(--yuzui-primary));
   --light-color: hsl(var(--yuzui-light));
   color: var(--light-color);
-  background-color: var(--accent-color);
+  background-color: var(--primary-color);
 }
 
 .yuzui-theme ::selection {
-  --accent-color: hsl(var(--yuzui-accent));
+  --primary-color: hsl(var(--yuzui-primary));
   --light-color: hsl(var(--yuzui-light));
   color: var(--light-color);
-  background-color: var(--accent-color);
+  background-color: var(--primary-color);
 }
 
 .yuzui-theme *,

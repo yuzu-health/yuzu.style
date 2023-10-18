@@ -43,20 +43,6 @@
   color: var(--primary-color);
 }
 
-.yuzui-theme ::-moz-selection {
-  --primary-color: hsl(var(--yuzui-primary));
-  --light-color: hsl(var(--yuzui-light));
-  color: var(--light-color);
-  background-color: var(--primary-color);
-}
-
-.yuzui-theme ::selection {
-  --primary-color: hsl(var(--yuzui-primary));
-  --light-color: hsl(var(--yuzui-light));
-  color: var(--light-color);
-  background-color: var(--primary-color);
-}
-
 .yuzui-theme *,
 .yuzui-theme :before,
 .yuzui-theme :after {
